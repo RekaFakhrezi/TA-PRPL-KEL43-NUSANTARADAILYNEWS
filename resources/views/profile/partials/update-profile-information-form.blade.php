@@ -1,3 +1,7 @@
+@php
+    /** @var \App\Models\User $user */
+@endphp
+
 <section>
     <header>
         <h2 class="text-xl font-black text-ink">
