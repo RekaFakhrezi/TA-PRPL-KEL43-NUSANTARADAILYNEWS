@@ -21,7 +21,7 @@ class CommentController extends Controller
             'article_id' => $article->id,
             'user_id' => auth()->id(),
             'parent_id' => $request->parent_id,
-            'content' => $request->content,
+            'body' => $request->content,
         ]);
 
         // Notify article author if someone else commented
