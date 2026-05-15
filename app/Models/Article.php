@@ -62,13 +62,13 @@ class Article extends Model
     {
         if (!$this->image) return null;
 
-        // If it's already a full URL, return it
+        // Jika sudah berupa URL penuh (misal dari seeder), langsung kembalikan
         if (filter_var($this->image, FILTER_VALIDATE_URL)) {
             return $this->image;
         }
 
-        // Return the Supabase public URL
-        // Format: https://[project-id].supabase.co/storage/v1/object/public/[bucket]/[path]
-        return "https://qwhetscllvvbyufzeeyy.supabase.co/storage/v1/object/public/Article-Image/" . $this->image;
+        // Ambil URL secara dinamis dari storage disk yang aktif
+        // Ini akan otomatis bekerja baik di Supabase maupun Laravel Cloud
+        return \Illuminate\Support\Facades\Storage::disk(config('filesystems.default'))->url($this->image);
     }
 }
