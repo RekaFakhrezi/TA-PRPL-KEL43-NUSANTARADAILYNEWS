@@ -3,7 +3,7 @@
     <!-- Hero Section with Image -->
     @if($article->image)
         <div class="relative w-full h-[450px] overflow-hidden">
-            <img src="{{ asset('storage/' . $article->image) }}" alt="{{ $article->title }}" class="w-full h-full object-cover">
+            <img src="{{ $article->image_url }}" alt="{{ $article->title }}" class="w-full h-full object-cover">
             <div class="hero-overlay absolute inset-0"></div>
         </div>
     @else
@@ -286,7 +286,7 @@
                         <a href="{{ route('artikel.show', $related->id) }}" class="card-hover glass-card rounded-2xl overflow-hidden group">
                             @if($related->image)
                                 <div class="overflow-hidden h-48">
-                                    <img src="{{ asset('storage/' . $related->image) }}" alt="{{ $related->title }}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                                    <img src="{{ $related->image_url }}" alt="{{ $related->title }}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                                 </div>
                             @else
                                 <div class="w-full h-48 bg-gradient-to-br from-surface-2 to-white"></div>

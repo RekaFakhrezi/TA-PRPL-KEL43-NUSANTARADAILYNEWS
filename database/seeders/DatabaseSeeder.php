@@ -17,6 +17,10 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        $this->call(DummyDataSeeder::class);
+        $this->call([
+            DummyDataSeeder::class,
+            AdditionalDummyDataSeeder::class,
+            RealWorldDummyDataSeeder::class,
+        ]);
     }
 }

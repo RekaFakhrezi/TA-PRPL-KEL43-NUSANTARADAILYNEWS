@@ -57,4 +57,18 @@ class Article extends Model
         if (!$user) return false;
         return $this->likes()->where('user_id', $user->id)->exists();
     }
+
+    public function getImageUrlAttribute()
+    {
+        if (!$this->image) return null;
+
+        // If it's already a full URL, return it
+        if (filter_var($this->image, FILTER_VALIDATE_URL)) {
+            return $this->image;
+        }
+
+        // Return the Supabase public URL
+        // Format: https://[project-id].supabase.co/storage/v1/object/public/[bucket]/[path]
+        return "https://qwhetscllvvbyufzeeyy.supabase.co/storage/v1/object/public/Article-Image/" . $this->image;
+    }
 }

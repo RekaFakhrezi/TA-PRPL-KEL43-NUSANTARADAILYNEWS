@@ -3,7 +3,7 @@
     <div class="py-12 max-w-4xl mx-auto">
 
         @if($article->image)
-            <img src="{{ asset('storage/' . $article->image) }}"
+            <img src="{{ $article->image_url }}"
                 class="w-full mb-6 rounded">
         @endif
 

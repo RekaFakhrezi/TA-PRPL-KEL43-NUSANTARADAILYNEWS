@@ -27,7 +27,7 @@
                                     <td class="p-4">
                                         <div class="flex items-center gap-4">
                                             @if($article->image)
-                                                <img src="{{ asset('storage/' . $article->image) }}" class="w-16 h-12 object-cover rounded-xl border border-border-light hidden sm:block">
+                                                <img src="{{ $article->image_url }}" class="w-16 h-12 object-cover rounded-xl border border-border-light hidden sm:block">
                                             @endif
                                             <div>
                                                 <h3 class="font-bold text-ink hover:text-accent-dark transition-colors">

@@ -21,7 +21,7 @@
                         <p class="text-ink-light text-sm line-clamp-2">{{ \Illuminate\Support\Str::limit(strip_tags($article->content), 150) }}</p>
                     </div>
                     @if($article->image)
-                        <img src="{{ asset('storage/' . $article->image) }}" class="w-20 h-20 object-cover rounded-xl flex-shrink-0 border border-border-light">
+                        <img src="{{ $article->image_url }}" class="w-20 h-20 object-cover rounded-xl flex-shrink-0 border border-border-light">
                     @endif
                 </div>
                 <div class="flex flex-wrap gap-2 mt-4">

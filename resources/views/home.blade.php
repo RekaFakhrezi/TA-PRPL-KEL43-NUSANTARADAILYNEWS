@@ -4,7 +4,7 @@
     @if(!empty($featured))
         <section class="relative w-full h-[500px] overflow-hidden group">
             @if($featured->image)
-                <img src="{{ asset('storage/' . $featured->image) }}" alt="{{ $featured->title }}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                <img src="{{ $featured->image_url }}" alt="{{ $featured->title }}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
             @else
                 <div class="w-full h-full bg-gradient-to-br from-surface-2 to-surface"></div>
             @endif
@@ -82,7 +82,7 @@
                             <a href="{{ route('artikel.show', $article->id) }}" class="card-hover glass-card rounded-2xl overflow-hidden group">
                                 @if($article->image)
                                     <div class="overflow-hidden h-48">
-                                        <img src="{{ asset('storage/' . $article->image) }}" alt="{{ $article->title }}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                                        <img src="{{ $article->image_url }}" alt="{{ $article->title }}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                                     </div>
                                 @else
                                     <div class="h-48 bg-gradient-to-br from-surface-2 to-surface flex items-center justify-center">
@@ -170,7 +170,7 @@
                             <a href="{{ route('artikel.show', $catArticle->id) }}" class="card-hover glass-card rounded-2xl overflow-hidden group">
                                 @if($catArticle->image)
                                     <div class="overflow-hidden h-36">
-                                        <img src="{{ asset('storage/' . $catArticle->image) }}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                                        <img src="{{ $catArticle->image_url }}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                                     </div>
                                 @endif
                                 <div class="p-4">

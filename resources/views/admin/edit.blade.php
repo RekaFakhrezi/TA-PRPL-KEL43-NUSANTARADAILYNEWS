@@ -56,7 +56,7 @@
                 <label class="block text-sm font-bold text-ink mb-2">Gambar (Opsional)</label>
                 @if($article->image)
                     <div class="mb-3">
-                        <img src="{{ asset('storage/' . $article->image) }}" class="w-48 h-24 object-cover rounded-xl border border-border-light">
+                        <img src="{{ $article->image_url }}" class="w-48 h-24 object-cover rounded-xl border border-border-light">
                         <p class="text-xs text-ink-muted mt-1">Gambar saat ini</p>
                     </div>
                 @endif
